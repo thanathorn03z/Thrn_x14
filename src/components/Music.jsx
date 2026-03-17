@@ -1,31 +1,33 @@
 import { useEffect, useRef } from "react";
 
-function Music({ open }) {
+function Music({ open, game }) {
 
-const audioRef = useRef(null);
+  const audioRef = useRef(null);
 
-useEffect(() => {
+  useEffect(() => {
 
-if (audioRef.current) {
+    if (audioRef.current) {
 
-if (open) {
+      // 🎮 หน้าเกม → ใช้เพลงเดียว
+      if (game) {
+        audioRef.current.src = "/music/music.mp3";
+      } 
+      // 🎵 ของเดิม
+      else if (open) {
+        audioRef.current.src = "/music/love.mp3";
+      } else {
+        audioRef.current.src = "/music/birthday.mp3";
+      }
 
-audioRef.current.src = "/music/love.mp3";
+      audioRef.current.loop = true;
+      audioRef.current.volume = 0.5;
 
-} else {
+      audioRef.current.play().catch(() => {});
+    }
 
-audioRef.current.src = "/music/birthday.mp3";
+  }, [open, game]);
 
-}
-
-audioRef.current.play();
-
-}
-
-}, [open]);
-
-return <audio ref={audioRef} loop />;
-
+  return <audio ref={audioRef} />;
 }
 
 export default Music;
