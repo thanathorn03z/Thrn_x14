@@ -87,7 +87,7 @@ next(true)
 }
 
 return (
-<div className="text-center p-6 relative overflow-hidden h-[500px] bg-gradient-to-br from-pink-100 to-purple-200 rounded-xl">
+<div className="w-full min-h-screen flex flex-col items-center justify-center">
 
 <h2 className="text-2xl text-pink-500 mb-2">
 💖 เกมจับหัวใจให้ทัน!

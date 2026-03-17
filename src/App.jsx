@@ -11,7 +11,7 @@ const [step,setStep] = useState(1)
 
 return(
 <>
-
+<div className="w-full min-h-screen"></div>
 {/* 💖 เกมหัวใจก่อน */}
 {step === 1 && <HeartGame next={() => setStep(2)} />}
 
