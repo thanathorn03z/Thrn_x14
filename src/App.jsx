@@ -10,21 +10,21 @@ function App(){
 const [step,setStep] = useState(1)
 
 return(
-<>
-<div className="w-full min-h-screen"></div>
-{/* 💖 เกมหัวใจก่อน */}
-{step === 1 && <HeartGame next={() => setStep(2)} />}
+<div className="w-screen h-screen overflow-hidden">
 
-{/* 🎮 เกมจับคู่ (โค้ดเดิมคุณ) */}
-{step === 2 && <Game unlock={() => setStep(3)} />}
+  {/* 💖 เกมหัวใจ */}
+  {step === 1 && <HeartGame next={() => setStep(2)} />}
 
-{/* 🎂 หน้าเซอร์ไพรส์ */}
-{step === 3 && <Hero />}
-{step === 3 && <Wish />}
+  {/* 🎮 เกมจับคู่ */}
+  {step === 2 && <Game unlock={() => setStep(3)} />}
 
-<Footer/>
+  {/* 🎂 หน้าเซอร์ไพรส์ */}
+  {step === 3 && <Hero />}
+  {step === 3 && <Wish />}
 
-</>
+  <Footer/>
+
+</div>
 )
 
 }
