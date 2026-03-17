@@ -87,8 +87,7 @@ next(true)
 }
 
 return (
-<div className="w-full min-h-screen flex flex-col items-center justify-center">
-  <div className="w-full h-screen"></div>
+<div className="fixed inset-0 flex items-center justify-center">
 
 <h2 className="text-2xl text-pink-500 mb-2">
 💖 เกมจับหัวใจให้ทัน!
